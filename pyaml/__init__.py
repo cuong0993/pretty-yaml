@@ -168,8 +168,6 @@ UnsafePYAMLDumper = PYAMLDumper
 
 add_representer = PYAMLDumper.add_representer
 
-add_representer( bool,
-	lambda s,o: s.represent_scalar('tag:yaml.org,2002:bool', ['no', 'yes'][o]) )
 add_representer( type(None),
 	lambda s,o: s.represent_scalar('tag:yaml.org,2002:null', '') )
 add_representer(str, PYAMLDumper.represent_str)
